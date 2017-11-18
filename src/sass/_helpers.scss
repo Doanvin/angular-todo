@@ -1,0 +1,96 @@
+$material-heading-shadow: 0 3px 2px rgba(0, 0, 0, .3);
+$material-card-shadow: 2px 3px 2px 2px rgba(0, 0, 0, .2);
+$material-card-background-color: darken($white, 0);
+
+$bg-main: lighten($blue, 15);
+
+@mixin material-heading {
+  margin-bottom: 4px;
+  box-shadow: $material-heading-shadow;
+}
+
+@mixin material-card {
+  position: relative;
+  border-radius: 2px;
+  background-color: $material-card-background-color;
+  box-shadow: $material-card-shadow;
+  overflow: hidden;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $bg-main;
+}
+
+.add-list-wrap {
+  @include material-heading;
+  background-color: $color-primary;
+}
+
+.main-wrap {
+  background-color: $bg-main;
+}
+
+.nav-list {
+  &__card {
+    height: 100%;
+  }
+
+  &__heading {
+    @include heading-font;
+    padding-bottom: .5rem;
+    border-bottom: 2px solid lighten($black, 20);
+    text-align: center;
+  }
+}
+
+.card {
+  @include material-card;
+
+  &--left {
+    border-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &--right {
+    border-left: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  &--top {
+    border-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: 2px 0 2px 2px rgba(0, 0, 0, .2);
+  }
+
+  &--bottom {
+    border-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+
+.btn {
+  @include heading-font;
+}
+
+.input-text {
+  @include content-font;
+}
+
+.todo-list {
+  @include content-font;
+}
+
+.fa {
+  &-pencil,
+  &-sort,
+  &-plus,
+  &-minus {
+    padding-right: .75rem;
+  }
+}

@@ -1,0 +1,54 @@
+//*******************************TYPOGRAPHY*******************************/
+
+html {
+  font-size: $text-base-min;
+}
+
+@media screen and (min-width: $text-min-width) {
+  html {
+    font-size: calc($text-base-min + ($text-base-max - $text-base-min) * (100vw - $text-min-width) / ($text-max-width - $text-min-width));
+  }
+
+}
+
+@media (min-width: $text-max-width) {
+  html {
+    font-size: $text-base-max;
+  }
+}
+
+
+
+body {
+  background-color: white;
+  color: #333;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+p {
+  margin: .6rem 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: $h-margin;
+  font-weight: inherit;
+  line-height: $h-line-height;
+}
+
+h1 {
+  font-size: $h1-size;
+  margin-top: 0;
+}
+
+h2 {font-size: $h2-size;}
+
+h3 {font-size: $h3-size;}
+
+h4 {font-size: $h4-size;}
+
+small,
+.font-small {font-size: $size-7 !important;}

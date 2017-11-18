@@ -1,0 +1,50 @@
+// GENERAL
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+// CONTAINER
+.container {
+  position: relative;
+}
+
+@media screen and (min-width: $desktop) {
+  .container {
+    width: $desktop-base;
+    max-width: $desktop-base;
+    margin: 0 auto;
+  }
+
+}
+
+@media screen and (min-width: $widescreen) {
+  .container {
+    width: $widescreen-base;
+    max-width: $widescreen-base;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: $fullhd) {
+  .container {
+    width: $fullhd-base;
+    max-width: $fullhd-base;
+    margin: 0 auto;
+  }
+}

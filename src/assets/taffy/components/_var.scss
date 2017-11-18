@@ -1,0 +1,51 @@
+//*******************************SIZING************************/
+$size-1: 3rem !default
+$size-2: 2.5rem !default
+$size-3: 2rem !default
+$size-4: 1.5rem !default
+$size-5: 1.25rem !default
+$size-6: 1rem !default
+$size-7: 0.75rem !default
+
+//*******************************FLUID TYPOGRAPHY************************/
+
+$text-base-min: 16px !default;
+$text-base-max: 24px !default;
+
+$text-min-width: 360px !default;
+$text-max-width: 1216px !default;
+
+
+// HEADING SIZES
+$h1-size: 2.441rem !default;
+$h2-size: 1.953rem !default;
+$h3-size: 1.563rem !default;
+$h4-size: 1.25rem !default;
+
+// HEADING FONT DEFAULTS
+$h-margin: .5rem 0 !default;
+$h-line-height: 1.2 !default;
+
+//*******************************COLORS************************/
+$btn-bg-color-default: #dcdcdc;
+$btn-text-color-default: #363636;
+$color-primary: #EA1B64 !default;
+$color-secondary: #333 !default;
+$color-primary-compliment: #2E882E !default;
+$white: #fff;
+$black: #000;
+
+//*******************************GRID************************/
+// The container horizontal gap, which acts as the offset for breakpoints
+$gap: 16px !default;
+// 960, 1024, 1152, and 1344 have been chosen because they are divisible by both 12 and 16
+$tablet: 768px !default;
+// 960px container + 3rem
+$desktop-base: 960px;
+$desktop: $desktop-base + (2 * $gap) !default;
+// 1152px container + 3rem
+$widescreen-base: 1152px;
+$widescreen: $widescreen-base + (2 * $gap) !default;
+// 1344px container + 3rem
+$fullhd-base: 1344px;
+$fullhd: $fullhd-base + (2 * $gap) !default;

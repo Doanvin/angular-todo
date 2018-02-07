@@ -1,13 +1,30 @@
 export class List {
-    public key: string;
-    public title: string;
-    public tags: Array<string>;
-    public tasks: Array<string>;
+    public id: string;
+    public todos: Todo[];
 
-    constructor(title: string, tags: string) {
-        this.key = Date.now().toString();
+    constructor(public title: string, public tags, list: {id: string, title: string, tags: string[],
+                                                          todos: [{text: string, completed: Boolean}]}) {
+        this.id = list.id || Date.now().toString();
         this.title = title;
         this.tags = tags.trim().split(',');
-        this.tasks = [];
+        this.todos;
     }
+}
+
+export class Todo {
+  completed: Boolean;
+
+  _text: string;
+  get text() {
+		return this._text;
+	}
+	set text(value: string) {
+		this._text = value.trim();
+}
+
+  constructor(text: string, completed: Boolean) {
+    this.text = text;
+    this.completed = completed || false;
+  }
+
 }

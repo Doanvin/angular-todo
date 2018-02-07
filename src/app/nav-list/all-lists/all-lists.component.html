@@ -1,3 +1,5 @@
-<!-- <li [data-list-key]="list.key" class="lists__item">
-  {{ title }}
-</li> -->
+<li
+  *ngFor="let list of lists" 
+  class="lists__item">
+  {{ list.title }}
+</li>

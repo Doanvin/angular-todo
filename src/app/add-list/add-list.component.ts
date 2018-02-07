@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { List } from '../shared/list.model';
+import { ListService } from '../shared/list.service';
+
 @Component({
   selector: 'app-add-list',
   templateUrl: './add-list.component.html',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private listService: ListService) { }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  createList(listTitle: string, tags: string) {
+    this.listService.addList(listTitle, tags);
   }
-
 }

@@ -1,12 +1,8 @@
-<nav id="nav-list" class="nav-list grid__col is-3">
+<nav id="nav-list" class="nav-list">
   <div class="nav-list__card card">
     <h2 class="nav-list__heading">Lists</h2>
     <ul>
-      <app-all-lists
-        [lists]="[]"
-        (listAdded)="getLists()"
-        *ngFor="let list of lists"
-        >{{ list.title }}</app-all-lists>
+      <app-all-lists></app-all-lists>
     </ul>
   </div>
 </nav>

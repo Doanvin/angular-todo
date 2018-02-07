@@ -1,50 +1,46 @@
-// GENERAL
+/*******************************GENERAL*******************************/
 
 html {
   box-sizing: border-box;
 }
 
 *,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
+*:before,
+*:after {
   box-sizing: inherit;
-}
-
-body {
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
+body{
+  padding: 0;
+  margin: 0;
+}
 
-
-// CONTAINER
+/*******************************CONTAINER*******************************/
 .container {
   position: relative;
 }
 
-@media screen and (min-width: $desktop) {
+@media screen and (min-width: 1000px) {
   .container {
-    width: $desktop-base;
-    max-width: $desktop-base;
     margin: 0 auto;
+    max-width: 960px;
+    width: 960px;
   }
 
 }
 
-@media screen and (min-width: $widescreen) {
+@media screen and (min-width: 1192px) {
   .container {
-    width: $widescreen-base;
-    max-width: $widescreen-base;
-    margin: 0 auto;
+    max-width: 1152px;
+    width: 1152px;
   }
 }
 
-@media screen and (min-width: $fullhd) {
+@media screen and (min-width: 1384px) {
   .container {
-    width: $fullhd-base;
-    max-width: $fullhd-base;
-    margin: 0 auto;
+    max-width: 1344px;
+    width: 1344px;
   }
 }

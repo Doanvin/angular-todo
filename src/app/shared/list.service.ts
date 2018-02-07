@@ -9,10 +9,13 @@ export class ListService {
     this.listsKey = 'Lists';
 		let persistedLists = JSON.parse(localStorage.getItem(this.listsKey) || '[]');
 		// Normalize back into classes
-    persistedLists.map( (list: {id: string, title: string, tags: string[], todos: [{text: string, completed: Boolean}]}) => {
+    persistedLists.map( (list) => {
+      console.log(list);
       // List classes
-  		let constructedList = new List(list.title, list.tags.join(','), list);
-      if (list.todos === undefined){
+  		let constructedList = new List(list.title, list.tags.join(','));
+      constructedList.id = list.id;
+      if (!list.todos || list.todos == 'undefined'){
+        constructedList.todos = [];
       } else {
         // Todo classes
         for(let i = 0; i < list.todos.length; i++) {
@@ -26,7 +29,7 @@ export class ListService {
   }
 
   addList(title: string, tags: string) {
-    let newList = new List(title, tags, undefined);
+    let newList = new List(title, tags);
     this.lists.push(newList);
     localStorage.setItem(this.listsKey, JSON.stringify(this.lists));
   }

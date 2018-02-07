@@ -1,13 +1,12 @@
 export class List {
-    public id: string;
-    public todos: Todo[];
+    id: string;
+    todos: {}[];
 
-    constructor(public title: string, public tags, list: {id: string, title: string, tags: string[],
-                                                          todos: [{text: string, completed: Boolean}]}) {
-        this.id = list.id || Date.now().toString();
+    constructor(public title: string, public tags) {
+        this.id = Date.now().toString();
         this.title = title;
         this.tags = tags.trim().split(',');
-        this.todos;
+        this.todos = [];
     }
 }
 
@@ -26,5 +25,4 @@ export class Todo {
     this.text = text;
     this.completed = completed || false;
   }
-
 }

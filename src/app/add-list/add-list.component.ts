@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { List } from '../shared/list.model';
 import { ListService } from '../shared/list.service';
 
 @Component({

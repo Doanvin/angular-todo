@@ -10,11 +10,11 @@ import { ListService } from '../../shared/list.service';
 export class AllListsComponent implements OnInit {
   lists: List[];
 
-  constructor(private listsService: ListService) {
+  constructor(private listService: ListService) {
   }
 
   ngOnInit() {
-    this.lists = this.listsService.lists;
+    this.lists = this.listService.lists;
   }
 
   showTodos(index: string) {

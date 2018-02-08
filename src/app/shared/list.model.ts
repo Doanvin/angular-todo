@@ -21,7 +21,7 @@ export class Todo {
 		this._text = value.trim();
 }
 
-  constructor(text: string, completed: Boolean) {
+  constructor(text: string, completed: Boolean = false) {
     this.text = text;
     this.completed = completed || false;
   }

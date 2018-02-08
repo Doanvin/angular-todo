@@ -52,4 +52,14 @@ export class ListService {
     }
     return lists;
   }
+
+  addTodo(listIndex, newTask){
+    let todo = new Todo(newTask);
+    this.lists[listIndex].todos.push(todo);
+  }
+
+  getTodos(index: string) {
+    console.log(this.lists[index].todos);
+    return this.lists[index]
+  }
 }

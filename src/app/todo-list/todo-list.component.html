@@ -4,14 +4,13 @@
       <input #newTask
       type="text"
       placeholder="New Task"
-      value=""
       (input)="newTask.value=$event.target.value">
     </div>
     <div class="grid__col is-2 no-padding--sm">
       <button class="btn btn--full-width"
       type="button"
       name="button"
-      (click)="addTodo()"><i class="fa fa-plus"></i>Add Task</button>
+      (click)="addTodo(newTask.value)"><i class="fa fa-plus"></i>Add Task</button>
     </div>
   </div>
 
@@ -28,7 +27,7 @@
           </div>
 
           <div class="todo__task grid__col is-9">
-            {{ todo.text }}
+            {{ todo.text() }}
           </div>
 
           <div class="todo__actions grid__col is-2">

@@ -1,6 +1,6 @@
 <li
   *ngFor="let list of lists; let i = index"
   class="lists__item"
-  (click)="showTodos(i)">
+  (click)="updateCurrentList(i)">
    {{ list.title }}
 </li>

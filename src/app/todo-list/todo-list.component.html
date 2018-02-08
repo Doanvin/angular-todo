@@ -1,7 +1,8 @@
 <div class="card">
   <div class="grid">
     <div class="grid__col is-9 no-padding--sm">
-      <input type="text"
+      <input #newTask
+      type="text"
       placeholder="New Task"
       value=""
       (input)="newTask.value=$event.target.value">
@@ -10,7 +11,34 @@
       <button class="btn btn--full-width"
       type="button"
       name="button"
-      (click)="addTodo"><i class="fa fa-plus"></i>Add Task</button>
+      (click)="addTodo()"><i class="fa fa-plus"></i>Add Task</button>
     </div>
   </div>
+
+  <main id="todo-list" class="todo">
+
+    <div class="grid__col is-9"
+          *ngFor="let todo of todos; let i = index"
+          class="todo__item">
+
+        <div class="todo__item grid">
+          <div class="grid__col is-1">
+            <i class="fa fa-sort"></i>
+            <input type="checkbox">
+          </div>
+
+          <div class="todo__task grid__col is-9">
+            {{ todo.text }}
+          </div>
+
+          <div class="todo__actions grid__col is-2">
+            <i class="fa fa-pencil"></i>
+            <i class="fa fa-trash"></i>
+          </div>
+        </div>
+
+    </div>
+
+  </main>
+
 </div>

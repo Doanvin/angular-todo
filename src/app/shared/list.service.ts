@@ -3,6 +3,7 @@ import { List, Todo } from './list.model';
 export class ListService {
   lists: List[];
   todos: Todo[];
+  currentList: List;
   listsKey: string;
 
   constructor () {
@@ -26,6 +27,9 @@ export class ListService {
       return constructedList;
     });
     this.lists = persistedLists;
+    if (this.lists.length > 0) {
+      this.currentList = this.lists[0];
+    }
   }
 
   addList(title: string, tags: string) {

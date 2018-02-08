@@ -9,9 +9,9 @@ import { ListService } from '../shared/list.service';
   styleUrls: ['./todo-list.component.scss']
 })
 export class TodoListComponent implements OnInit {
-  lists: List[]
-  currentList: List
-  todos: {}[]
+  lists: List[];
+  currentList: List;
+  todos: {}[];
 
   constructor(private listService: ListService) { }
 
@@ -21,7 +21,7 @@ export class TodoListComponent implements OnInit {
     this.todos = this.lists[0].todos;
   }
 
-  displayTodos() {
+  addTodo() {
 
   }
 

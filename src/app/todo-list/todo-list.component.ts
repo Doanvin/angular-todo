@@ -18,4 +18,8 @@ export class TodoListComponent implements OnInit {
   addTodo(newTodo) {
     this.listService.addTodo(newTodo);
   }
+
+  toggleCompleted(todoIndex: number) {
+    this.listService.updateTodo(todoIndex);
+  }
 }

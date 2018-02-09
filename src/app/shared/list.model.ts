@@ -1,6 +1,6 @@
 export class List {
     id: string;
-    todos: {}[];
+    todos: {text: string; completed: Boolean}[];
 
     constructor(public title: string, public tags) {
         this.id = Date.now().toString();

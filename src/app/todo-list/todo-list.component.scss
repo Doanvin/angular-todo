@@ -1,7 +1,12 @@
 .todo {
   min-height: 75vh;
+
+  &__task {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
 
-.complete {
+.completed {
   text-decoration: line-through !important;
 }

@@ -32,4 +32,14 @@ export class ListService {
                         'todos': this.lists[listIndex.toString()].todos
                        };
   }
+
+  updateTodo(todoIndex: number) {
+    let complete = this.lists[this.currentList.index.toString()]
+      .todos[todoIndex].completed;
+
+    this.lists[this.currentList.index.toString()]
+      .todos[todoIndex].completed = (complete ? false : true);
+
+    localStorage.setItem(this.listsKey, JSON.stringify(this.lists));
+  }
 }

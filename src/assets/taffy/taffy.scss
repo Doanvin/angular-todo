@@ -1,23 +1,21 @@
-@charset "UTF-8";
+// Variables
+@import "components/var";
 
-// Variables;
-@import "components/_var";
+// CONTAINER
+@import "components/container";
 
-// CONTAINER;
-@import "components/_container";
+// GRID
+@import "components/grid-basic";
+@import "components/grid-children-layout";
+@import "components/grid-column-count-layout";
+@import "components/grid-offset";
 
-// GRID;
-@import "components/_grid-basic";
-@import "components/_grid-children-layout";
-@import "components/_grid-column-count-layout";
-@import "components/_grid-offset";
+// TYPOGRAPHY
+@import "components/typography";
 
-// TYPOGRAPHY;
-@import "components/_typography";
-
-// BASIC ELEMENT STYLES;
-@import "components/_styles-buttons";
-@import "components/_styles-forms";
-@import "components/_styles-tables";
+// BASIC ELEMENT STYLES
+@import "components/styles-buttons";
+@import "components/styles-forms";
+@import "components/styles-tables";
 @import "components/_styles-media";
-@import "components/_styles-helpers";
+@import "components/tyles-helpers";

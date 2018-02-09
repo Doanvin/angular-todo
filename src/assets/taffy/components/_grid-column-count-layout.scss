@@ -55,7 +55,7 @@
 }
 
 
-@media (max-width : 768px){
+@media (max-width : $tablet){
 
 .grid-1>*,.grid-2>*,.grid-3>*,.grid-4>*,.grid-5>*,.grid-6>*,.grid-7>*,.grid-8>*,.grid-9>*,.grid-10>*,.grid-11>*,.grid-12>*{
   width: 100%;
@@ -65,7 +65,7 @@
 
 
 
-@media (min-width : 1000px){
+@media (min-width : $desktop){
 
 .grid-1--large>*{
   width: 100%;
@@ -111,14 +111,14 @@
   width: 9.09090%;
 }
 
-.grid-12>*{
+.grid-12> * {
   width: 8.33333%;
 }
 
 }
 
 
-@media (max-width : 1000px){
+@media (max-width: $desktop){
 
 .grid-1--medium>*{
   width: 100%;
@@ -171,7 +171,7 @@
 }
 
 
-@media (max-width : 768px){
+@media (max-width : $tablet){
 
 .grid-1--small,.grid-2--small,.grid-3--small,.grid-4--small,.grid-5--small,.grid-6--small,.grid-7--small,.grid-8--small,.grid-9--small,.grid-10--small,.grid-11--small,.grid-12--small{
   -webkit-box-orient: horizontal;
@@ -181,7 +181,7 @@
 }
 
 .grid-1--small>*,.grid-2--small>*,.grid-3--small>*,.grid-4--small>*,.grid-5--small>*,.grid-6--small>*,.grid-7--small>*,.grid-8--small>*,.grid-9--small>*,.grid-10--small>*,.grid-11--small>*,.grid-12--small>*{
-  padding: .512rem;
+  padding: $gap;
 }
 
 .grid-1--small>*{
@@ -237,18 +237,87 @@
 
 /*******************************GRID COLUMN COUNT REMAINDERS*******************************/
 
-.grid-grow>*{
+.grid--grow>*{
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
 }
 
-.grid-center{
+.grid--center{
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
 }
 
-.grid-gapless>*{
-  padding: 0 !important;
+.grid--in-grid {
+  margin-top: 0;
+  margin-right: 0;
+  margin-left: 0;
+
+  & > .grid__col {
+    margin: 0;
+    padding-right: $gap / 2;
+    padding-left: $gap / 2;
+  }
+
+  & > .grid__col:first-child {
+    padding-right: $gap / 2;
+    padding-left: 0;
+  }
+
+  & > .grid__col:last-child {
+    padding-right: 0;
+    padding-left: $gap / 2;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .grid--in-grid {
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: 0;
+
+    & > .grid__col {
+      margin: 0;
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    & > .grid__col:first-child {
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    & > .grid__col:last-child {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+.grid--gapless {
+  margin-top: 0;
+  margin-right: 0;
+  margin-left: 0;
+
+  & > .grid__col {
+    margin: 0;
+    padding: 0 !important;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }

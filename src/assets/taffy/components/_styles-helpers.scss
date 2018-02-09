@@ -1,101 +1,88 @@
 /*******************************HELPERS*******************************/
 
-.text-center{
-  text-align: center;
+.text-center {
+  text-align: center !important;
 }
 
-.text-left{
-  text-align: left;
+.text-left {
+  text-align: left !important;
 }
 
-.text-right{
-  text-align: right;
+.text-right {
+  text-align: right !important;
 }
 
-.text-justify{
-  text-align: justify;
+.text-justify {
+  text-align: justify !important;
 }
 
-.text-lowercase{
-  text-transform: lowercase;
+.text-lowercase {
+  text-transform: lowercase !important;
 }
 
-.text-uppercase{
-  text-transform: uppercase;
+.text-uppercase {
+  text-transform: uppercase !important;
 }
 
-.text-capitalize{
-  text-transform: capitalize;
+.text-capitalize {
+  text-transform: capitalize !important;
 }
 
-.text-normal{
+.text-normal {
   font-weight: normal;
 }
 
-.text-bold{
+.text-bold {
   font-weight: bold;
 }
 
-.text-italic{
+.text-italic {
   font-style: italic;
 }
 
-.vertically-center{
-  display:-webkit-box;
-	display:-ms-flexbox;
+.vertically-center {
   display:flex;
-  -webkit-box-pack: center;
-	-ms-flex-pack: center;
   justify-content:center;
-  -webkit-box-align: center;
-	-ms-flex-align: center;
-	-ms-grid-row-align: center;
   align-items:center;
 }
 
-.float-left{
+.float-left {
   float: left;
 }
 
-.float-right{
+.float-right {
   float: right;
 }
 
-.no-margin{
+.no-margin {
   margin: 0 !important;
 }
 
-.no-padding{
+.no-padding {
   margin: 0 !important;
 }
 
-@media (max-width: 600px) {
-  .no-padding--sm {
-    margin: 0 !important;
-  }
-}
-
-.block{
+.block {
   display: block;
 }
 
-.inline-block{
+.inline-block {
   display: inline-block;
 }
 
-.inline{
+.inline {
   display: inline;
 }
 
-.show{
+.show {
   display: block !important;
 }
 
-.hide{
+.hide {
   display: none !important;
 }
 
-.screen-reader{
+.screen-reader {
   border: 0;
   clip: rect(1px,1px,1px,1px);
   clip-path: inset( 50% );
@@ -108,13 +95,22 @@
   word-wrap: normal;
 }
 
-.content-buffer{
+.content-buffer {
   padding: 40px 0;
 }
 
 
-@media (max-width : 600px){
-  .content-buffer{
+@media (max-width : 600px) {
+  .content-buffer {
     padding: 20px 3%;
+  }
+}
+
+.justify {
+  &--flex-start {
+    justify-content: flex-start !important;
+  }
+  &--flex-end {
+    justify-content: flex-end !important;
   }
 }

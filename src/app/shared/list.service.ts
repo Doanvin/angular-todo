@@ -10,7 +10,7 @@ export class ListService {
 		this.lists = JSON.parse(localStorage.getItem(this.listsKey)) || [];
     this.currentList = {'index': 0,
                         'todos': this.lists[0].todos
-                      };
+                       };
   }
 
   addList(title: string, tags: string) {

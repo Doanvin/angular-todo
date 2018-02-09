@@ -34,21 +34,21 @@ h1,
 h2,
 h3,
 h4 {
+  margin: $h-margin;
   font-weight: inherit;
-  line-height: 1.2;
-  margin: .512rem 0;
+  line-height: $h-line-height;
 }
 
 h1 {
-  font-size: 2.441rem;
+  font-size: $h1-size;
   margin-top: 0;
 }
 
-h2 {font-size: 1.953rem;}
+h2 {font-size: $h2-size;}
 
-h3 {font-size: 1.563rem;}
+h3 {font-size: $h3-size;}
 
-h4 {font-size: 1.25rem;}
+h4 {font-size: $h4-size;}
 
 small,
-.font_small {font-size: 0.8rem;}
+.font-small {font-size: $size-7 !important;}

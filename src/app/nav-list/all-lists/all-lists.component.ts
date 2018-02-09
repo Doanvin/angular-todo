@@ -9,17 +9,15 @@ import { TodoListComponent } from '../../todo-list/todo-list.component';
   styleUrls: ['./all-lists.component.scss']
 })
 export class AllListsComponent implements OnInit {
-  lists: List[];
 
   constructor(private listService: ListService) {
   }
 
   ngOnInit() {
-    this.lists = this.listService.lists;
   }
 
-  updateCurrentList(index: Number) {
-    this.listService.currentList = index;
+  updateCurrentList(index: number) {
+    this.listService.updateCurrentList(index);
     console.log(this.listService.currentList);
   }
 

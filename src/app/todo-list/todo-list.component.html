@@ -17,7 +17,7 @@
   <main id="todo-list" class="todo">
 
     <div class="grid__col is-9"
-          *ngFor="let todo of todos; let i = index"
+          *ngFor="let todo of listService.currentList.todos; let i = index"
           class="todo__item">
 
         <div class="todo__item grid">
@@ -27,7 +27,7 @@
           </div>
 
           <div class="todo__task grid__col is-9">
-            {{ todo.text() }}
+            {{ todo.text }}
           </div>
 
           <div class="todo__actions grid__col is-2">

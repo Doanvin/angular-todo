@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card todo-component">
   <div class="grid">
     <div class="grid__col is-9 no-padding--sm">
       <input #newTask
@@ -23,7 +23,7 @@
          class="todo__item">
 
         <div class="todo__item grid">
-          <div class="grid__col is-2 text-center">
+          <div class="grid__col is-2 is-2--small text-center">
             <i class="fa fa-sort"></i>
             <!-- Do not have checkbox checked if todo is not complete -->
             <input *ngIf="!todo.completed"
@@ -36,14 +36,14 @@
                    checked>
           </div>
 
-          <div class="todo__task grid__col is-8"
+          <div class="todo__task grid__col is-8 is-8--small"
                [ngClass]="{completed: todo.completed === true}">
             {{ todo.text }}
           </div>
 
-          <div class="todo__actions grid__col is-2">
+          <div class="todo__actions grid__col is-2 is-2--small">
             <i class="fa fa-pencil"></i>
-            <i class="fa fa-trash"></i>
+            <i (click)="listService.removeTodo(i)" class="fa fa-trash"></i>
           </div>
         </div>
 

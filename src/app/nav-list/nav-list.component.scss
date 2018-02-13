@@ -1,0 +1,9 @@
+@import "../app.component";
+
+@media screen and (min-width: 768px) {
+  .nav-list {
+      &__card {
+        min-height: $todo-min-height;
+    }
+  }   
+}

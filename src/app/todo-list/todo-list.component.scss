@@ -1,11 +1,19 @@
+@import "../app.component";
+
 .todo {
-  min-height: 75vh;
 
   &__task {
     padding-right: 0;
     padding-left: 0;
   }
 }
+
+@media screen and (min-width: 768px) {
+  .todo-component {
+    min-height: $todo-min-height;
+  }
+}
+
 
 .completed {
   text-decoration: line-through !important;

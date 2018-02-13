@@ -15,9 +15,13 @@ export class TodoListComponent implements OnInit {
   ngOnInit() {
   }
 
-  addTodo(newTodo) {
+  addTodo(newTodo: string) {
     this.listService.addTodo(newTodo);
   }
+
+  // removeTodo(todoIndex: number) {
+  //   this.listService.removeTodo(todoIndex);
+  // }
 
   toggleCompleted(todoIndex: number) {
     this.listService.updateTodo(todoIndex);

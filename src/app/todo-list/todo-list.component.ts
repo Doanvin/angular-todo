@@ -9,10 +9,12 @@ import { ListService } from '../shared/list.service';
   styleUrls: ['./todo-list.component.scss']
 })
 export class TodoListComponent implements OnInit {
+  lists: List[];
 
   constructor(private listService: ListService) { }
 
   ngOnInit() {
+    this.lists = this.listService.lists;
   }
 
   addTodo(newTodo: string) {

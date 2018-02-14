@@ -2,10 +2,10 @@ export class List {
     id: string;
     todos: {text: string; completed: Boolean}[];
 
-    constructor(public title: string, public tags) {
+    constructor(public title: string, public tags: string[]) {
         this.id = Date.now().toString();
         this.title = title;
-        this.tags = tags.trim().split(',');
+        this.tags = tags;
         this.todos = [];
     }
 }

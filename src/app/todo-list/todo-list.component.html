@@ -1,16 +1,10 @@
 <div class="card todo-component">
   <div class="grid">
-    <div class="grid__col is-9 no-padding--sm">
-      <input #newTask
-      type="text"
-      placeholder="New Task"
-      (input)="newTask.value=$event.target.value">
+    <div class="grid__col is-9">
+      <input #newTask type="text" placeholder="New Task" (input)="newTask.value=$event.target.value">
     </div>
-    <div class="grid__col is-2 no-padding--sm">
-      <button class="btn btn--full-width"
-        type="button"
-        name="button"
-        (click)="addTodo(newTask.value)">
+    <div class="grid__col is-2">
+      <button class="btn btn--full-width" type="button" name="button" (click)="addTodo(newTask.value)">
         <i class="fa fa-plus"></i>Add Task
       </button>
     </div>
@@ -18,34 +12,26 @@
 
   <main id="todo-list" class="todo">
 
-    <div class="grid__col is-9"
-         *ngFor="let todo of listService.currentList.todos; let i = index"
-         class="todo__item">
+    <div class="grid__col is-9" *ngFor="let todo of listService.currentList.todos; let i = index" class="todo__item">
 
-        <div class="todo__item grid">
-          <div class="grid__col is-2 is-2--small text-center">
-            <i class="fa fa-sort"></i>
-            <!-- Do not have checkbox checked if todo is not complete -->
-            <input *ngIf="!todo.completed"
-                  (click)="toggleCompleted(i)"
-                  type="checkbox">
-            <!-- Check the box if todo is completed -->
-            <input *ngIf="todo.completed"
-                   (click)="toggleCompleted(i)"
-                   type="checkbox"
-                   checked>
-          </div>
-
-          <div class="todo__task grid__col is-8 is-8--small"
-               [ngClass]="{completed: todo.completed === true}">
-            {{ todo.text }}
-          </div>
-
-          <div class="todo__actions grid__col is-2 is-2--small">
-            <i class="fa fa-pencil"></i>
-            <i (click)="listService.removeTodo(i)" class="fa fa-trash"></i>
-          </div>
+      <div class="todo__item grid">
+        <div class="grid__col is-2 is-2--small text-center">
+          <i class="fa fa-sort"></i>
+          <!-- Do not have checkbox checked if todo is not complete -->
+          <input *ngIf="!todo.completed" (click)="toggleCompleted(i)" type="checkbox">
+          <!-- Check the box if todo is completed -->
+          <input *ngIf="todo.completed" (click)="toggleCompleted(i)" type="checkbox" checked>
         </div>
+
+        <div class="todo__task grid__col is-8 is-8--small" [ngClass]="{completed: todo.completed === true}">
+          {{ todo.text }}
+        </div>
+
+        <div class="todo__actions grid__col is-2 is-2--small">
+          <i class="fa fa-pencil"></i>
+          <i (click)="listService.removeTodo(i)" class="fa fa-trash"></i>
+        </div>
+      </div>
 
     </div>
 

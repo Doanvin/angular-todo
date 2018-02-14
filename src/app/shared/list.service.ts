@@ -23,6 +23,12 @@ export class ListService {
     localStorage.setItem(this.listsKey, JSON.stringify(this.lists));
   }
 
+  removeList(listIndex: number) {
+    this.lists.splice(listIndex, 1);
+    this.updateCurrentList(listIndex - 1);
+    localStorage.setItem(this.listsKey, JSON.stringify(this.lists));
+  }
+
   addTodo(newTask: string) {
     const todo = {
       text: newTask,
@@ -32,7 +38,7 @@ export class ListService {
     localStorage.setItem(this.listsKey, JSON.stringify(this.lists));
   }
 
-  removeTodo(todoIndex) {
+  removeTodo(todoIndex: number) {
     this.lists[this.currentList.index.toString()].todos.splice(todoIndex, 1);
     localStorage.setItem(this.listsKey, JSON.stringify(this.lists));
   }

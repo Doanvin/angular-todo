@@ -2,8 +2,13 @@
 <div class="main-wrap">
   <div class="container">
     <div class="grid">
-      <app-nav-list class="grid__col is-3"></app-nav-list>
-      <app-todo-list class="grid__col is-9"></app-todo-list>
+      <div class="grid__col is-3">
+          <app-nav-list></app-nav-list>
+      </div>
+      
+      <div class="grid__col is-9">
+          <router-outlet></router-outlet>
+      </div>
     </div>
   </div>
 </div>

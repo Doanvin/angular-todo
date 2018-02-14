@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router} from '@angular/router';
+
 import { List } from '../../shared/list.model';
 import { ListService } from '../../shared/list.service';
-import { TodoListComponent } from '../../todo-list/todo-list.component';
 
 @Component({
   selector: 'app-all-lists',

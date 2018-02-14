@@ -21,6 +21,10 @@ export class TodoListComponent implements OnInit {
     this.listService.addTodo(newTodo);
   }
 
+  removeList() {
+    this.listService.removeList(this.listService.currentList.index);
+  }
+
   // removeTodo(todoIndex: number) {
   //   this.listService.removeTodo(todoIndex);
   // }

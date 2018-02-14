@@ -6,5 +6,6 @@
   &:hover,
   &:focus {
     background: lighten($color-primary, 15);
+    cursor: pointer;
   }
 }

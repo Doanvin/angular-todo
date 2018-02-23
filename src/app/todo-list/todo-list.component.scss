@@ -1,4 +1,5 @@
 @import "../app.component";
+@import "../../sass/mixins";
 
 .todo {
 
@@ -6,6 +7,26 @@
     padding-right: 0;
     padding-left: 0;
   }
+}
+
+.todo-component {
+  &__heading {
+    @include heading-font;
+    margin: 0;
+    text-align: center;
+
+    .fa, .fa-trash {
+      font-size: 1rem;
+    }
+  }
+}
+
+.add-todo {
+  @include content-font;
+}
+
+.todo__task {
+  @include content-font;
 }
 
 @media screen and (min-width: 768px) {

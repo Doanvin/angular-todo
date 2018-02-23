@@ -1,13 +1,13 @@
-<div class="card todo-component">
+<section class="card todo-component">
   <div class="grid">
-    <div class="grid__col is-12">
-      Current List: {{ listService.currentListTitle() }} <i (click)="removeList()" class="fa fa-trash"></i>
-    </div>
+    <h2 class="todo-component__heading grid__col is-12">
+      {{ listService.currentListTitle() }} <i (click)="removeList()" class="fa fa-trash"></i>
+    </h2>
   </div>
 
-  <div class="grid">
+  <div class="grid add-todo">
     <div class="grid__col is-9">
-      <input #newTask type="text" placeholder="New Task" (input)="newTask.value=$event.target.value">
+      <input #newTask type="text" placeholder="New Task" (keyup.enter)="addTodo(newTask.value)" (input)="newTask.value" required>
     </div>
     <div class="grid__col is-2">
       <button class="btn btn--full-width" type="button" name="button" (click)="addTodo(newTask.value)">
@@ -16,20 +16,18 @@
     </div>
   </div>
 
-  <main id="todo-list" class="todo">
+  <main id="todo-list" class="todo-list">
 
-    <div class="grid__col is-9" *ngFor="let todo of listService.currentList.todos; let i = index" class="todo__item">
+    <div class="grid__col is-12 no-padding" *ngFor="let todo of listService.currentList.todos; let i = index">
 
-      <div class="todo__item grid">
-        <div class="grid__col is-2 is-2--small text-center">
+      <div class="todo grid">
+        <div class="todo__checksort grid__col is-2 is-2--small text-center">
           <i class="fa fa-sort"></i>
-          <!-- Do not have checkbox checked if todo is not complete -->
-          <input *ngIf="!todo.completed" (click)="toggleCompleted(i)" type="checkbox">
-          <!-- Check the box if todo is completed -->
-          <input *ngIf="todo.completed" (click)="toggleCompleted(i)" type="checkbox" checked>
+          <!-- Checkbox is checked only if todo.completed is true -->
+          <input (click)="toggleCompleted(i)" type="checkbox" [checked]="todo.completed">
         </div>
 
-        <div class="todo__task grid__col is-8 is-8--small" [ngClass]="{completed: todo.completed === true}">
+        <div class="todo__task grid__col is-8 is-8--small" [ngClass]="{completed: todo.completed}" data->
           {{ todo.text }}
         </div>
 
@@ -43,4 +41,4 @@
 
   </main>
 
-</div>
+</section>

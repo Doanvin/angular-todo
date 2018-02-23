@@ -1,6 +1,7 @@
 @import "../../../sass/styles";
 
 .lists__item {
+  @include nav-font;
   padding: .25rem .5rem;
 
   &:hover,

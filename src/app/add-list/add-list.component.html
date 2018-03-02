@@ -1,25 +1,27 @@
 <section class="add-list-wrap">
   <div class="container">
-    <div class="add-list grid">
-
-      <div class="grid__col is-5 add-list-item">
-        <label for="new-list-title" class="screen-reader">New List Title</label>
-        <input #newList (input)="newList.title=$event.target.value" type="text" placeholder="New List Title" name="new-list-title"
-          class="input-text" autofocus>
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <div class="add-list grid">
+    
+        <div class="grid__col is-5 add-list-item">
+          <label for="newList" class="screen-reader">New List Title</label>
+          <input id="newList" type="text" placeholder="New List Title" name="newList" ngModel
+            required class="input-text" autofocus>
+        </div>
+    
+        <div class="grid__col is-4 add-list-item">
+          <label for="newTags" class="screen-reader">New List Tags</label>
+          <input id="newTags" type="text" placeholder="New List Tags" name="newTags" ngModel
+            required class="input-text">
+        </div>
+    
+        <div class="grid__col is-3 add-list-item">
+          <button id="create-list" type="submit" class="btn btn--full-width">
+            <i class="fa fa-plus"></i> Create List
+          </button>
+        </div>
+    
       </div>
-
-      <div class="grid__col is-4 add-list-item">
-        <label for="new-list-tags" class="screen-reader">New List Tags</label>
-        <input #newTags (input)="newTags.title=$event.target.value" type="text" placeholder="New List Tags" name="new-list-tags"
-          class="input-text">
-      </div>
-
-      <div class="grid__col is-3 add-list-item">
-        <button id="create-list" (click)="createList(newList.value, newTags.value)" class="btn btn--full-width">
-          <i class="fa fa-plus"></i> Create List
-        </button>
-      </div>
-
-    </div>
+    </form>
   </div>
 </section>

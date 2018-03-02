@@ -17,8 +17,8 @@ export class ListService {
     };
   }
 
-  addList(title: string, tags: string) {
-    const newList = new List(title, tags.trim().split(','));
+  addList(title: string, tags: string[]) {
+    const newList = new List(title, tags);
     this.lists.push(newList);
     localStorage.setItem(this.listsKey, JSON.stringify(this.lists));
   }

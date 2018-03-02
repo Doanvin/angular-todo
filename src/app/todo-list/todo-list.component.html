@@ -4,10 +4,10 @@
       {{ listService.currentListTitle() }} <i (click)="removeList()" class="fa fa-trash"></i>
     </h2>
   </div>
-
+  
   <div class="grid add-todo">
     <div class="grid__col is-9">
-      <input #newTask type="text" placeholder="New Task" (keyup.enter)="addTodo(newTask.value)" (input)="newTask.value" required>
+      <input #newTask type="text" placeholder="New Task" (keyup.enter)="addTodo(newTask.value)" (input)="newTask.value">
     </div>
     <div class="grid__col is-2">
       <button class="btn btn--full-width" type="button" name="button" (click)="addTodo(newTask.value)">
@@ -27,7 +27,7 @@
           <input (click)="toggleCompleted(i)" type="checkbox" [checked]="todo.completed">
         </div>
 
-        <div class="todo__task grid__col is-8 is-8--small" [ngClass]="{completed: todo.completed}" data->
+        <div class="todo__task grid__col is-8 is-8--small" [ngClass]="{completed: todo.completed}">
           {{ todo.text }}
         </div>
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 import { ListService } from '../shared/list.service';
 
@@ -13,7 +14,15 @@ export class AddListComponent implements OnInit {
 
   ngOnInit() {}
 
-  createList(listTitle: string, tags: string) {
-    this.listService.addList(listTitle, tags);
+  onSubmit(form: NgForm) {
+    let tags = form.value.newTags.split(',');
+    // Format tags without whitespace, lowercase, remove empty strings
+    for (let i = 0; i < tags.length; i++) {
+      tags[i] = tags[i].trim().toLowerCase();
+      if (tags[i] == '') {
+        tags.splice(i, 1);
+      }
+    }
+    this.listService.addList(<string>form.value.newList, <string[]>tags);
   }
 }

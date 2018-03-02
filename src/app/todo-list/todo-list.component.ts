@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 import { List } from '../shared/list.model';
 import { ListService } from '../shared/list.service';
@@ -17,8 +18,12 @@ export class TodoListComponent implements OnInit {
     this.lists = this.listService.lists;
   }
 
-  addTodo(newTodo: string) {
-    this.listService.addTodo(newTodo);
+  // Calls addTodo in listService
+  onSubmit(form: NgForm) {
+    this.listService.addTodo(form.value.newTask);
+    if (form.valid && form.submitted) {
+      form.reset();
+    }
   }
 
   removeList() {

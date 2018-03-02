@@ -5,16 +5,19 @@
     </h2>
   </div>
   
-  <div class="grid add-todo">
-    <div class="grid__col is-9">
-      <input #newTask type="text" placeholder="New Task" (keyup.enter)="addTodo(newTask.value)" (input)="newTask.value">
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="grid add-todo">
+      <div class="grid__col is-9">
+        <input id="newTask" type="text" placeholder="New Task" (keyup.enter)="addTask.click" name="newTask" ngModel minlength="3" required>
+        <span #invalidTask *ngIf="!f.valid && f.touched && f.dirty">Please enter a new task at least 3 characters long.</span>
+      </div>
+      <div class="grid__col is-3">
+        <button #addTask id="addTask" class="btn btn--primary btn--full-width" type="submit" [disabled]="!f.valid">
+          <i class="fa fa-plus"></i>Add Task
+        </button>
+      </div>
     </div>
-    <div class="grid__col is-2">
-      <button class="btn btn--full-width" type="button" name="button" (click)="addTodo(newTask.value)">
-        <i class="fa fa-plus"></i>Add Task
-      </button>
-    </div>
-  </div>
+  </form>
 
   <main id="todo-list" class="todo-list">
 

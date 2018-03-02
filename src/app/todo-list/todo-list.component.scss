@@ -2,10 +2,19 @@
 @import "../../sass/mixins";
 
 .todo {
+  padding: 0;
+
+  &__checksort,
+  &__task,
+  &__actions {
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+  }
 
   &__task {
     padding-right: 0;
     padding-left: 0;
+    
   }
 }
 
@@ -23,6 +32,15 @@
 
 .add-todo {
   @include content-font;
+
+  &__item {
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+
+    &:last-child {
+      padding-bottom: .5rem;
+    }
+  }
 }
 
 .todo__task {

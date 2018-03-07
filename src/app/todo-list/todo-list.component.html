@@ -1,23 +1,31 @@
 <section class="card todo-component">
+
+
   <div class="grid">
     <h2 class="todo-component__heading grid__col is-12">
       {{ listService.currentListTitle() }} <i (click)="removeList()" class="fa fa-trash"></i>
     </h2>
   </div>
   
+
   <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+
     <div class="grid add-todo">
       <div class="grid__col is-9 add-todo__item">
         <input id="newTask" type="text" placeholder="New Task" (keyup.enter)="addTask.click" name="newTask" ngModel minlength="3" required>
-        <span #invalidTask *ngIf="!f.valid && f.touched && f.dirty">Please enter a new task at least 3 characters long.</span>
+        <!-- Validation warning message -->
+        <span #invalidTask [ngStyle]="{color: 'red'}" *ngIf="!f.valid && f.touched && f.dirty">Please enter a new task at least 3 characters long.</span>
       </div>
+
       <div class="grid__col is-3 add-todo__item">
         <button #addTask id="addTask" class="btn btn--primary btn--full-width" type="submit" [disabled]="!f.valid">
           <i class="fa fa-plus"></i>Add Task
         </button>
       </div>
     </div>
+
   </form>
+
 
   <main id="todo-list" class="todo-list">
 
@@ -43,5 +51,6 @@
     </div>
 
   </main>
+
 
 </section>

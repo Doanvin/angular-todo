@@ -37,4 +37,10 @@ export class TodoListComponent implements OnInit {
   toggleCompleted(todoIndex: number) {
     this.listService.updateTodo(todoIndex);
   }
+
+  todoEditable(todoIndex: number) {
+    const selector = 'label[dataTodoIndex: ' + todoIndex + ']';
+    return document.querySelector(selector).classList.contains('edit');
+  }
+
 }

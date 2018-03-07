@@ -12,7 +12,7 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 
 const routes: Routes = [
   { path: '', component: TodoListComponent },
-  { path: 'lists/:id/:title', component: TodoListComponent }
+  { path: 'lists/:title', component: TodoListComponent }
 ];
 
 @NgModule({

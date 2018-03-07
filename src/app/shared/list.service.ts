@@ -5,22 +5,26 @@ import { List } from './list.model';
 @Injectable()
 export class ListService {
   listsKey: string;
+  currentListKey: string;
   lists: List[];
   currentList: { index: number, todos };
 
   constructor () {
     this.listsKey = 'Lists';
+    this.currentListKey = 'CurrentList';
     this.lists = JSON.parse(localStorage.getItem(this.listsKey)) || [];
-    this.currentList = {
-      index: 0,
-      todos: this.lists[0].todos
-    };
+    this.currentList = JSON.parse(localStorage.getItem(this.currentListKey)) || {};
   }
 
   addList(title: string, tags: string[]) {
     const newList = new List(title, tags);
     this.lists.push(newList);
     localStorage.setItem(this.listsKey, JSON.stringify(this.lists));
+
+    if (this.currentList.index === undefined) {
+      this.currentList = {index: 0, todos: []};
+      this.updateCurrentList(0);
+    }
   }
 
   removeList(listIndex: number) {
@@ -48,9 +52,11 @@ export class ListService {
       index: listIndex,
       todos: this.lists[listIndex.toString()].todos
     };
+
+    localStorage.setItem(this.currentListKey, JSON.stringify(this.currentList));
   }
 
-  currentListTitle(index: number) {
+  currentListTitle() {
     return this.lists[this.currentList.index.toString()].title;
   }
 
@@ -62,6 +68,9 @@ export class ListService {
       .todos[todoIndex].completed = (complete ? false : true);
 
     localStorage.setItem(this.listsKey, JSON.stringify(this.lists));
+
+    this.currentList.todos[todoIndex].completed = complete ? false : true;
+    localStorage.setItem(this.currentListKey, JSON.stringify(this.currentList));
   }
 
 }

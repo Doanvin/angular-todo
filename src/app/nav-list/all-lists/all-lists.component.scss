@@ -9,4 +9,11 @@
     background: lighten($color-primary, 15);
     cursor: pointer;
   }
+
+  &.currentList {
+    background: lighten($color-primary, 15);
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, .2);
+    box-sizing: border-box;
+    cursor: pointer;
+  }
 }

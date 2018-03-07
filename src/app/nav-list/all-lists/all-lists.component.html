@@ -1,6 +1,7 @@
-<li routerLink="/lists/{{ list.id }}/{{ list.title }}"
+<li routerLink="/lists/{{ list.title }}"
     *ngFor="let list of listService.lists; let i = index" 
     class="lists__item" 
-    (click)="updateCurrentList(i)">
+    (click)="updateCurrentList(i)"
+    [ngClass]="{currentList: isCurrentList(i)}">
   {{ list.title }}
 </li>

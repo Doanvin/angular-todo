@@ -22,4 +22,10 @@ export class AllListsComponent implements OnInit {
     console.log(this.listService.currentList);
   }
 
+  isCurrentList(i: number) {
+    if (this.listService.currentList.index !== undefined) {
+      return this.listService.currentList.index == i ? true : false;
+    }
+  }
+
 }

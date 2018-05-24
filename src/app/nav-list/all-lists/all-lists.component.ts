@@ -11,7 +11,7 @@ import { ListService } from '../../shared/list.service';
 })
 export class AllListsComponent implements OnInit {
 
-  constructor(private listService: ListService) {
+  constructor(public listService: ListService) {
   }
 
   ngOnInit() {

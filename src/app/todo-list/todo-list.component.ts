@@ -12,7 +12,7 @@ import { ListService } from '../shared/list.service';
 export class TodoListComponent implements OnInit {
   lists: List[];
 
-  constructor(private listService: ListService) { }
+  constructor(public listService: ListService) { }
 
   ngOnInit() {
     this.lists = this.listService.lists;

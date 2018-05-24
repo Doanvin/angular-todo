@@ -80,7 +80,7 @@ body {
 
 .btn {
   @include content-font;
-  cursor: auto;
+  cursor: pointer;
   background-color: $btn-color;
 
   &:hover,

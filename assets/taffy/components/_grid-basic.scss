@@ -1,0 +1,54 @@
+//******************************GRID & COLUMNS*******************************/
+
+.grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+.grid>* {
+  flex-basis: 100%;
+  padding: $gap;
+  -ms-flex-preferred-size: 100%;
+}
+
+
+.grid__col{
+  flex-basis: 100%;
+  padding: $gap;
+  -ms-flex-preferred-size: 100%;
+}
+
+
+//This gets applied when the device width is above 768px*/
+@media screen and (min-width: $tablet) {
+  .grid {
+    flex-direction: row;
+  }
+
+  .grid>* {
+    flex: 1;
+    padding: $gap;
+  }
+
+  .grid__col {
+    flex: 1;
+    padding: $gap;
+  }
+
+}
+
+
+
+//GRID COMPATIBILITY IE10+*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .grid {display: block;}
+
+  //This gets applied when the device width is above 768px*/
+  @media screen and (min-width: $tablet) {
+    .grid {display: flex}
+    .grid__col {display: inline-block;}
+    .grid>* {display: inline-block;}
+  }
+}

@@ -1,0 +1,55 @@
+// BUTTONS
+.btn,
+.btn-ghost,
+.btn--sharp,
+.btn-ghost--sharp {
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  justify-content: flex-start;
+  height: 2rem;
+  margin-top: .15rem;
+  margin-bottom: .15rem;
+  padding-top: 0.375rem;
+  padding-right: 0.625rem;
+  padding-bottom: 0.375rem;
+  padding-left: 0.625rem;
+  color: $btn-text-color-default;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: none;
+  cursor: pointer;
+  vertical-align: top;
+  user-select: none;
+}
+
+.btn {
+  border: 0;
+  border-radius: 3px;
+  background-color: $btn-bg-color-default;
+
+  &--sharp {
+    border-radius: 0;
+  }
+
+  &--full-width {
+    min-width: 100%;
+  }
+}
+
+.btn-ghost {
+  border: solid 2px $btn-bg-color-default;
+  border-radius: 3px;
+  background-color: transparent;
+
+  &--sharp {
+    border-radius: 0;
+  }
+
+  &--full-width {
+    min-width: 100%;
+  }
+}

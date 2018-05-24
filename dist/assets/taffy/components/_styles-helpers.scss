@@ -1,0 +1,116 @@
+/*******************************HELPERS*******************************/
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-justify {
+  text-align: justify !important;
+}
+
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.text-capitalize {
+  text-transform: capitalize !important;
+}
+
+.text-normal {
+  font-weight: normal;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+.vertically-center {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.inline {
+  display: inline;
+}
+
+.show {
+  display: block !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+.screen-reader {
+  border: 0;
+  clip: rect(1px,1px,1px,1px);
+  clip-path: inset( 50% );
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal;
+}
+
+.content-buffer {
+  padding: 40px 0;
+}
+
+
+@media (max-width : 600px) {
+  .content-buffer {
+    padding: 20px 3%;
+  }
+}
+
+.justify {
+  &--flex-start {
+    justify-content: flex-start !important;
+  }
+  &--flex-end {
+    justify-content: flex-end !important;
+  }
+}
